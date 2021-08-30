@@ -1,0 +1,23 @@
+﻿@page
+@model ProjectoRazor.Pages.NominaModel
+@{
+}
+
+<div>
+    <h1>Nomina</h1>
+    @foreach (Nomina nomina in Model.NominaList)
+    {
+        this.Model.calculo(nomina);
+
+        <p>Nombre: @nomina.Nombres</p>
+        <p>Apellidos: @nomina.Apellidos</p>
+        <p>Cargo: @nomina.Cargo</p>
+        <p>Salario: @nomina.Salario</p>
+        <p>AFP: @nomina.AFP</p>
+        <p>ARS: @nomina.ARS</p>
+        <p>IRS: @nomina.IRS</p>
+        <p>Descuento total: @nomina.DescuentoTotal</p>
+        <p>Salario neto: @nomina.SalarioNeto</p>
+       <hr/>
+    }
+</div>
