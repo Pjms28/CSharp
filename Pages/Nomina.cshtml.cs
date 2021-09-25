@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using ProjectoRazor.Models;
 
 namespace ProjectoRazor.Pages
 {
@@ -11,18 +12,17 @@ namespace ProjectoRazor.Pages
     {
 
         public List<Nomina> NominaList = new List<Nomina>() {
-
-            new Nomina("Pedro Jose", "Martinez Sanchez", "Front-end", 100000, 0, 0, 0, 0, 0),
-            new Nomina("Carlos", "Ferrer Genao", "DBA", 1000000, 0, 0, 0, 0, 0),
-            new Nomina("Joswald", "Martinez", "CEO Coke Cola", 50000000, 0, 0, 0, 0, 0),
-            new Nomina("Yohan", "R19 Inhuman", "Accionist T1", 10000000, 0, 0, 0, 0, 0),
-            new Nomina("Carlos Daniel", "Quezada", "Alorica", 500, 0, 0, 0, 0, 0)
+            new Nomina(){Nombres = "Pedro Jose", Apellidos = "Martinez Sanchez", Cargo = "Front-end", Salario = 100000, AFP = 0, ARS = 0, DescuentoTotal = 0, IRS = 0, SalarioNeto = 0},
+            new Nomina(){Nombres = "Carlos", Apellidos = "Ferrer Genao", Cargo = "DBA", Salario = 1000000, AFP = 0, ARS = 0, DescuentoTotal = 0, IRS = 0, SalarioNeto = 0},
+            new Nomina(){Nombres = "Joswald", Apellidos = "Martinez", Cargo = "CEO Coke Cola", Salario = 50000000, AFP = 0, ARS = 0, DescuentoTotal = 0, IRS = 0, SalarioNeto = 0},
+            new Nomina(){Nombres = "Yohan", Apellidos = "R19 Inhuman", Cargo = "Accionist T1", Salario = 10000000, AFP = 0, ARS = 0, DescuentoTotal = 0, IRS = 0, SalarioNeto = 0},
+            new Nomina(){Nombres = "Carlos Daniel", Apellidos = "Quezada", Cargo = "Alorica", Salario = 500, AFP = 0, ARS = 0, DescuentoTotal = 0, IRS = 0, SalarioNeto = 0},
         };
 
 
         public void calculo( Nomina nomina)
         {
-            var afpCalc = Math.Round(nomina.Salario * 0.0287);
+           var afpCalc = Math.Round(nomina.Salario * 0.0287);
             if (afpCalc > 7738.67)
             {
                 nomina.AFP = 7738.67;
@@ -72,7 +72,7 @@ namespace ProjectoRazor.Pages
 
     }
 
-    public class Nomina
+   /*public class Nomina
     {
 
         public string Nombres { get; set; }
@@ -84,17 +84,8 @@ namespace ProjectoRazor.Pages
         public double IRS { get; set; }
         public double DescuentoTotal { get; set; }
         public double SalarioNeto { get; set; }
-        public Nomina(string Nombres, string Apellidos, string Cargo, double Salario, double AFP, double ARS, double IRS, double DescuentoTotal, double SalarioNeto)
+        public Nomina()
         {
-            this.Nombres = Nombres;
-            this.Apellidos = Apellidos;
-            this.Cargo = Cargo;
-            this.Salario = Salario;
-            this.AFP = AFP;
-            this.ARS = ARS;
-            this.IRS = IRS;
-            this.DescuentoTotal = DescuentoTotal;
-            this.SalarioNeto = SalarioNeto;
         }
-    }
+    }*/
 }
